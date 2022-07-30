@@ -24,7 +24,7 @@ jobs:
       run: |
         echo "RELEASE_DATE=$(date --rfc-3339=date)" >> ${GITHUB_ENV}
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag bluewebserver:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/bluewebserver:$(date +%s)
     
     - name: Docker Push
       run: docker push ${{secrets.DOCKER_USER}}/bluewebserver
