@@ -24,6 +24,6 @@ jobs:
       run: |
         echo "RELEASE_DATE=$(date --rfc-3339=date)" >> ${GITHUB_ENV}
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag bluewebwerver:${{GITHUB_ENV}}
+      run: docker build . --file Dockerfile --tag bluewebwerver:${GITHUB_ENV}
       
       
